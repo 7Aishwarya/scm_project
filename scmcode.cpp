@@ -135,7 +135,7 @@ Tree::Tree()
 
 
 
-// Destructor
+// Destructor called
 
 
 Tree::~Tree()
@@ -172,7 +172,7 @@ void Tree::freeNode(Node* leaf)
 
 
 
-// Add a node
+// Add a node node
 
 
 void Tree::addNode(int key)
