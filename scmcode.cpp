@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-// Node class
+// Node class1 //class2
 
 class Node
 {
@@ -16,7 +16,7 @@ class Node
 
     Node* right;
 
-public:
+public: // constructor callled
 
     Node()
 {
