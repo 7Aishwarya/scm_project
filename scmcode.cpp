@@ -7,7 +7,7 @@ using namespace std;
 
 // Node class
 
-class Node 
+class Node
 {
 
     int key;
@@ -18,12 +18,12 @@ class Node
 
 public:
 
-    Node() 
-{ 
+    Node()
+{
 
-    key=-1; 
+    key=-1;
 
-    left=NULL;  
+    left=NULL;
 
     right=NULL;
 
@@ -31,33 +31,33 @@ public:
 
 
     void setKey(int aKey)
- { 
+ {
 
-    key = aKey; 
+    key = aKey;
 
  };
 
 
 
-    void setLeft(Node* aLeft) 
-  { 
+    void setLeft(Node* aLeft)
+  {
 
-    left = aLeft; 
+    left = aLeft;
 
   };
 
 
 
     void setRight(Node* aRight)
- { 
+ {
 
-    right = aRight; 
+    right = aRight;
 
  };
- 
 
 
-   int Key() 
+
+   int Key()
 {
    return key;
 };
@@ -89,7 +89,7 @@ public:
 
      ~Tree();
 
-     Node* Root() 
+     Node* Root()
 {
 
      return root;
@@ -175,13 +175,13 @@ void Tree::freeNode(Node* leaf)
 // Add a node
 
 
-void Tree::addNode(int key) 
+void Tree::addNode(int key)
 {
 
      // No elements. Add the root
 
 
-     if ( root == NULL ) 
+     if ( root == NULL )
 {
         cout << "add root node ... " << key << endl;
 
@@ -192,7 +192,7 @@ void Tree::addNode(int key)
         root = n;
 }
 
-     else 
+     else
 {
 
        cout << "add other node ... " << key << endl;
@@ -214,16 +214,16 @@ void Tree::addNode(int key)
 void Tree::addNode(int key, Node* leaf)
  {
 
-    if ( key <= leaf->Key() ) 
+    if ( key <= leaf->Key() )
 {
 
        if ( leaf->Left() != NULL )
 {
- 
+
          addNode(key, leaf->Left());
 
 }
-       else 
+       else
 {
 
           Node* n = new Node();
@@ -232,17 +232,17 @@ void Tree::addNode(int key, Node* leaf)
 
           leaf->setLeft(n);
 }
- 
+
  }
 
-    else 
+    else
 {
 
        if ( leaf->Right() != NULL )
 {
           addNode(key, leaf->Right());
 }
-       else 
+       else
 {
 
           Node* n = new Node();
@@ -266,10 +266,10 @@ void Tree::addNode(int key, Node* leaf)
 
 
 
-void Tree::inOrder(Node* n) 
+void Tree::inOrder(Node* n)
 {
 
-    if ( n ) 
+    if ( n )
 {
        inOrder(n->Left());
 
@@ -291,10 +291,10 @@ void Tree::inOrder(Node* n)
 
 
 
-void Tree::preOrder(Node* n) 
+void Tree::preOrder(Node* n)
 {
 
-    if ( n ) 
+    if ( n )
 {
        cout << n->Key() << " ";
 
@@ -317,10 +317,10 @@ void Tree::preOrder(Node* n)
 
 
 
-void Tree::postOrder(Node* n) 
+void Tree::postOrder(Node* n)
 {
 
-    if ( n ) 
+    if ( n )
 {
 
        postOrder(n->Left());
@@ -347,7 +347,7 @@ Tree* tree = new Tree();
 
 
 
- 
+
 
   tree->addNode(30);
 
@@ -359,33 +359,102 @@ Tree* tree = new Tree();
 
    tree->addNode(50);
 
-  
+
 cout << "In order traversal" << endl;
-   
+
 tree->inOrder(tree->Root());
-   
+
 cout << endl;
 
-   
+
 cout << "Pre order traversal" << endl;
-   
+
 tree->preOrder(tree->Root());
-   
+
 cout << endl;
 
 cout << "Post order traversal" << endl;
 
 tree->postOrder(tree->Root());
-   
+
 cout << "\n";
 
 
- 
 
 
-  
+
+
 delete tree;
 
 return 0;
+}
+void func2()
+{
+
+
+int cost[10][10],i,j,k,n;
+
+int queue[10],front,rear,v,visit[10],visited[10];
+
+int m;
+
+
+    cout <<"enterno of vertices";
+
+    cin >> n;
+
+    cout <<"ente no of edges";
+
+    cin >> m;
+
+    cout <<"\nEDGES \n";
+
+    for(k=1;k<=m;k++)
+    {
+
+        cin >>i>>j;
+
+        cost[i][j]=1;
+
+    }
+
+
+    cout <<"enter initial vertex";
+
+    cin >>v;
+
+    cout <<"Visitied vertices\n";
+
+    cout << v;
+
+    visited[v]=1;
+
+    k=1;
+
+
+while(k<n)
+{
+
+        for(j=1;j<=n;j++)
+
+            if(cost[v][j]!=0 && visited[j]!=1 && visit[j]!=1)
+{
+
+                visit[j]=1;
+
+                queue[rear++]=j;
 
 }
+
+        v=queue[front++];
+
+        cout<<v << " ";
+
+        k++;
+
+        visit[v]=0;
+
+        visited[v]=1;
+
+        return 0;
+    }
