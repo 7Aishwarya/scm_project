@@ -337,7 +337,68 @@ void Tree::postOrder(Node* n)
 
 
 // insert here func 2
+int func3()
+{
+   
+    unsigned int n;
 
+    unsigned long long factorial = 1;
+
+
+    cout << "Enter a positive integer: ";
+
+    cin >> n;
+
+
+    for(int i = 1; i <=n; ++i)
+    {
+
+        factorial *= i;
+
+    }
+
+
+    cout << "Factorial of " << n << " = " << factorial;    
+
+    return 0;
+
+ }
+int func4()  
+{  
+
+int n,r,sum=0,temp;    
+
+cout<<"Enter the Number=  ";    
+
+cin>>n;    
+
+temp=n;    
+
+while(n>0)    
+{    
+
+r=n%10;    
+
+sum=sum+(r*r*r);    
+
+n=n/10;    
+
+}    
+
+if(temp==sum)    
+
+cout<<"Armstrong Number."<<endl;    
+
+else    
+{
+
+cout<<"Not Armstrong Number."<<endl;   
+
+}
+
+return 0;  
+
+} 
 
 
 int main()
